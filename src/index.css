@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slide-img {
+  scroll-behavior: smooth;
+  transition: 0.5s all;
+}
+.other-img {
+  transform: scale(0);
+}
+.current-slide-img {
+  transform: scale(1);
+}
