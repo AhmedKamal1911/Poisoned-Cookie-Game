@@ -7,23 +7,30 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useMediaQuery } from "./hooks/useMediaQuery";
+import boy from "./assets/boy.png";
+import man from "./assets/man.png";
+import hijabGirl from "./assets/hijab-girl.png";
+import gril from "./assets/woman.png";
+import poisonedCookie from "./assets/web-cookies.png";
+import cookie from "./assets/cookie.png";
+import anonymous from "./assets/anonymous-man.png";
 
 const playersList = [
   {
     name: "mohamed",
-    src: "../src/assets/boy.png",
+    src: boy,
   },
   {
     name: "ali",
-    src: "../src/assets/man.png",
+    src: man,
   },
   {
     name: "nour",
-    src: "../src/assets/hijab-girl.png",
+    src: hijabGirl,
   },
   {
     name: "shimma",
-    src: "../src/assets/woman.png",
+    src: gril,
   },
 ];
 
@@ -340,10 +347,7 @@ function PlayerCard({
   return (
     <div className="flex flex-col items-center">
       <div className="size-[120px] bg-gray-100 p-1 pb-0 rounded-md rounded-b-none">
-        <img
-          src={playerInfo?.src ?? "../src/assets/anonymous-man.png"}
-          alt="player avatar"
-        />
+        <img src={playerInfo?.src ?? anonymous} alt="player avatar" />
       </div>
 
       <div
@@ -391,14 +395,7 @@ function CakesBox({ cakes }) {
   return (
     <div className="flex flex-wrap gap-1 justify-center bg-blue-500 p-2 rounded-md ">
       {Array.from({ length: cakes }).map((_, i, arr) => (
-        <Cookie
-          key={i}
-          src={
-            i === arr.length - 1
-              ? "../src/assets/web-cookies.png"
-              : "../src/assets/cookie.png"
-          }
-        />
+        <Cookie key={i} src={i === arr.length - 1 ? poisonedCookie : cookie} />
       ))}
     </div>
   );
